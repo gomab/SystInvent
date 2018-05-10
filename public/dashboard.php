@@ -68,7 +68,7 @@
                     <div class="card-body" style="width: 20rem;">
                         <h4 class="card-title">Categories</h4>
                         <p class="card-text">Gestion des Categories</p>
-                        <a href="#" class="btn btn-primary">Ajouter</a>
+                        <a href="#" data-toggle="modal" data-target="#category-add" class="btn btn-primary">Ajouter</a>
                         <a href="#" class="btn btn-primary">Gérer</a>
                     </div>
                 </div>                
@@ -78,7 +78,7 @@
                     <div class="card-body" style="width: 20rem;">
                         <h4 class="card-title">Brands</h4>
                         <p class="card-text">Gestion des marques</p>
-                        <a href="#" class="btn btn-primary">Ajouter</a>
+                        <a href="#" data-toggle="modal" data-target="#brand-add" class="btn btn-primary">Ajouter</a>
                         <a href="#" class="btn btn-primary">Gérer</a>
                     </div>
                 </div>                
@@ -88,12 +88,26 @@
                     <div class="card-body" style="width: 20rem;">
                         <h4 class="card-title">Produits</h4>
                         <p class="card-text">Gestion des produits</p>
-                        <a href="#" class="btn btn-primary">Ajouter</a>
+                        <a href="#" data-toggle="modal" data-target="#product-add" class="btn btn-primary">Ajouter</a>
                         <a href="#" class="btn btn-primary">Gérer</a>
                     </div>
                 </div>                
             </div>                    
         </div>
     </div>
+
+
+    <!-- modal category add Form -->
+    <?php include('./templates/category-add.php') ?>                            
+    <!-- End modal category add -->
+
+    <!-- modal product add Form -->
+    <?php include('./templates/product-add.php') ?>                            
+    <!-- End modal category add -->
+
+    <!-- modal brand add Form -->
+    <?php include('./templates/brand-add.php') ?>                            
+    <!-- End modal category add -->
+
 </body>
 </html>

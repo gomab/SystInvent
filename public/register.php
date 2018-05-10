@@ -21,31 +21,53 @@
 
     <br>
     <div class="container">
-        <div class="card mx-auto" style="width: 18rem;">
-            <img class="card-img-top mx-auto" style="width:60%" src="./images/login.png" alt="Login icon">
+        <div class="card mx-auto" style="width: 30rem;">
+            <div class="card-header">
+                S'enregistrer
+            </div>
             <div class="card-body">
                 <h5 class="card-title"></h5> 
-                <form>
+                <form id="register_form">
                     <div class="form-group">
+                        <label for="username">Nom</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="Votre Nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Prenom</label>
+                        <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Votre Nom">
+                    </div>
+
+                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
+
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Retapez Password">
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Retapez Password</label>
+                        <input type="password" name="re-password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-lock">&nbsp</i>Se connecter</button>
-                    <span><a href="register.php">S'enregistrer</a></span>
+
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select name="role" id="role" class="form-control">
+                            <option value="1">Admin</option>
+                            <option value="0">Other</option>
+                        </select>
+                    </div>
+
+                   
+                    <button type="submit" name="user_register" class="btn btn-primary"><i class="fa fa-user">&nbsp</i>S'enregistrer</button>
+                    <span><a href="index.php">Se connecter</a></span>
                     </form>
             </div>
-            <div class="card-footer">
-                <a href="#">Mot de passe oublié?</a>
-            </div>
+    
         </div>
     </div>
 </body>
