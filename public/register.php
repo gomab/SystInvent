@@ -27,39 +27,45 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title"></h5> 
-                <form id="register_form">
+                <form id="register_form" onsubmit="return false" autocomplete="off">
                     <div class="form-group">
                         <label for="username">Nom</label>
                         <input type="text" name="username" class="form-control" id="username" placeholder="Votre Nom">
+                        <small id="u_error" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="lastname">Prenom</label>
-                        <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Votre Nom">
+                        <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Votre Prenom">
+                        <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
 
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="e_error" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Retapez Password">
+                        <label for="password1">Password</label>
+                        <input type="password" name="password1" class="form-control" id="password1" placeholder="Retapez Password">
+                        <small id="p1_error" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Retapez Password</label>
-                        <input type="password" name="re-password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="password2">Retapez Password</label>
+                        <input type="password" name="password2" class="form-control" id="password2" placeholder="Password">
+                        <small id="p2_error" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="role">Role</label>
                         <select name="role" id="role" class="form-control">
+                            <option value="">Choose User type</option>
                             <option value="1">Admin</option>
                             <option value="0">Other</option>
                         </select>
+                        <small id="r_error" class="form-text text-muted"></small>
                     </div>
 
                    
@@ -70,5 +76,6 @@
     
         </div>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

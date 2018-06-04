@@ -117,10 +117,10 @@ class User{
     }
 
 }
-$user = new User();
+//$user = new User();
 
 //echo $user->createUserAccount("masta","mfumu","masta@mab.me","password","Admin");
-echo $user->userLogin("gomab@mab.me", "password");
+//echo $user->userLogin("gomab@mab.me", "password");
 
-echo $_SESSION['username'];
+//echo $_SESSION['username'];
 
