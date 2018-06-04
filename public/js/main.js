@@ -105,4 +105,57 @@ $(document).ready(function () {
             status = true;
         }
     })
+
+    //for login part
+
+    $("#login_form").on("submit", function() {
+        let status = false;
+        let email = $("#log_email");
+        let pass = $("#log_password");
+
+        //Email control
+        if(email.val() == ""){
+            email.addClass("border-danger");
+            $("#e_error").html("<span class='text-danger'> Veuiller saisir une adresse email</span>");
+            status = false;
+        }else{
+            email.removeClass("border-danger");
+            $("#e_error").html("");
+            status = true;
+        }
+
+        //Password control
+        if(pass.val() == ""){
+            pass.addClass("border-danger");
+            $("#p_error").html("<span class='text-danger'> Veuiller saisir votre mot de passe</span>");
+            status = false;
+        }else{
+            pass.removeClass("border-danger");
+            $("#p_error").html("");
+            status = true;
+        }
+
+        if (status){
+            $.ajax({
+                url : DOMAIN+"/includes/process.php",
+                method : "POST",
+                data : $("#login_form").serialize(),
+                success : function (data) {
+                    if(data == "NOT_REGISTERED"){
+                        email.addClass("border-danger");
+                        $("#e_error").html("<span class='text-danger'>It seems like you are not registered</span>");
+                    }else if(data == "PASSWORD_NOT_MATCHED" ){
+                        email.addClass("border-danger");
+                        $("#p_error").html("<span class='text-danger'>Saisir un mot de passe correct</span>");
+                        status = false;
+                    }else{
+                        //window.location.href = encodeURI(DOMAIN+"/index.php?msg=You are registered now you can login.");
+                        console.log(data);
+                       window.location.href = DOMAIN+"/dashboard.php";
+                    }
+                }
+            })
+        }
+    })
+
 });

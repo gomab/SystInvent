@@ -87,7 +87,7 @@ class User{
         $result = $pre_stmt->get_result();
 
         if($result->num_rows < 1){
-            return "NOT_REGISTERD";
+            return "NOT_REGISTERED";
         }else{
             $row = $result->fetch_assoc();
             if(password_verify($password, $row["password"])){

@@ -21,19 +21,35 @@
 
     <br>
     <div class="container">
+
+        <?php
+            if(isset($_GET["msg"]) AND !empty($_GET["msg"])){
+                ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <?=$_GET["msg"] ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <?php
+            }
+
+        ?>
+
         <div class="card mx-auto" style="width: 18rem;">
             <img class="card-img-top mx-auto" style="width:60%" src="./images/login.png" alt="Login icon">
             <div class="card-body">
                 <h5 class="card-title"></h5> 
-                <form>
+                <form id="login_form" onsubmit="return false">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="log_email">Email</label>
+                        <input type="email" class="form-control" name="log_email" id="log_email" aria-describedby="emailHelp"  placeholder="Enter email">
+                        <small id="e_error" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="log_password">Password</label>
+                        <input type="password" class="form-control" name="log_password" id="log_password" placeholder="Password">
+                        <small id="p_error" class="form-text text-muted"></small>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -48,5 +64,7 @@
             </div>
         </div>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
