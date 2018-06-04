@@ -109,5 +109,6 @@
     <?php include('./templates/brand-add.php') ?>                            
     <!-- End modal category add -->
 
+    <script src="js/main.js"></script>
 </body>
 </html>
