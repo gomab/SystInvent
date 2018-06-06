@@ -1,3 +1,9 @@
+<?php
+    include_once("./database/constants.php");
+    if(!isset($_SESSION["userid"])){
+        header("location:".DOMAIN."/index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +33,9 @@
                     <img class="card-img-top mx-auto" style="width:60%" src="./images/user.png" alt="Login icon">
                     <div class="card-body">
                         <h5 class="card-title"><strong class="text-center">Votre Profil</strong></h5> 
-                        <p class="card-text"><i class="fa fa-user">&nbsp;</i>Ma Fumu</p>
+                        <p class="card-text"><i class="fa fa-user">&nbsp;</i><?= $_SESSION['username'] ?></p>
                         <p class="card-text"><i class="fa fa-user">&nbsp;</i>Admin</p>
-                        <p class="card-text">Derniere connection: xxxx-xx-xx</p>
+                        <p class="card-text">Derniere connection: <?= $_SESSION['last_login'] ?></p>
                         <a href="#" class="btn btn-primary"><i class="fa fa-edit">&nbsp;</i>
                         Editer
                         </a>

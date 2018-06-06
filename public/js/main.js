@@ -73,16 +73,24 @@ $(document).ready(function () {
 
         //Password matched
         if((pass1.val() == pass2.val()) && status == true){
+            //Loader
+            $(".overlay").show();
             $.ajax({
                 url : DOMAIN+"/includes/process.php",
                 method : "POST",
                 data : $("#register_form").serialize(),
                 success : function (data) {
                     if(data == "EMAIL_ALREADY_EXISTS"){
+                        //Loader
+                        $(".overlay").hide();
                         alert("It seems like you email is already used");
                     }else if(data == "SOME_ERROR" ){
+                        //Loader
+                        $(".overlay").hide();
                         alert("Something wrong");
                     }else{
+                        //Loader
+                        $(".overlay").hide();
                         window.location.href = encodeURI(DOMAIN+"/index.php?msg=You are registered now you can login.");
                     }
                 }
@@ -142,13 +150,19 @@ $(document).ready(function () {
                 data : $("#login_form").serialize(),
                 success : function (data) {
                     if(data == "NOT_REGISTERED"){
+                        //Loader
+                        $(".overlay").hide();
                         email.addClass("border-danger");
                         $("#e_error").html("<span class='text-danger'>It seems like you are not registered</span>");
                     }else if(data == "PASSWORD_NOT_MATCHED" ){
+                        //Loader
+                        $(".overlay").hide();
                         email.addClass("border-danger");
                         $("#p_error").html("<span class='text-danger'>Saisir un mot de passe correct</span>");
                         status = false;
                     }else{
+                        //Loader
+                        $(".overlay").show();
                         //window.location.href = encodeURI(DOMAIN+"/index.php?msg=You are registered now you can login.");
                         console.log(data);
                        window.location.href = DOMAIN+"/dashboard.php";

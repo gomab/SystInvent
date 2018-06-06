@@ -1,3 +1,11 @@
+<?php
+    include_once("./database/constants.php");
+
+    if(isset($_SESSION["userid"])){
+        header("location:".DOMAIN."/dashboard.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +21,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--main css -->
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
 <body>
+    <div class="overlay">
+        <div class="loader">
+
+        </div>
+    </div>
+
     <!-- Navbar -->
     <?php include_once('./templates/header.php')  ?>
     <!-- End Navbar -->
@@ -66,5 +83,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
 </body>
 </html>
